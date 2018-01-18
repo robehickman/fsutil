@@ -1,0 +1,1 @@
+Fsutl is a collection of file system utilities, it includes features to ensure files have a given extension, detect changes, detect moved files and apply diffs. Used by Simple_http_file_sync and rrbackup.
