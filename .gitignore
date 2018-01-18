@@ -1,0 +1,7 @@
+distribute.sh
+test_file
+*.pyc
+*.swp
+*.swn
+*.swm
+*.swo
