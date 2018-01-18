@@ -245,7 +245,7 @@ def filter_f_list(f_list, unix_wildcard):
     return f_list_filter;
 
 ############################################################################################
-def apply_ignore_filters(f_list): # I think this is only used by the client
+def apply_ignore_filters(f_list):
     """  Loads file ignore filters from IGNORE_FILTER_FILE and applies them to file list passed """
     filters = []
 
