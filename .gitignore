@@ -1,3 +1,6 @@
+build
+dist
+fsutil.egg-info
 distribute.sh
 test_file
 *.pyc
