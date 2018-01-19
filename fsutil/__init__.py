@@ -101,7 +101,7 @@ def get_file_list(path):
                 f_list.append(get_single_file_info(f_path, cpjoin(newpath, fle)))
 
     recur_dir(path)
-    return apply_ignore_filters(f_list)
+    return f_list
 
 ############################################################################################
 def make_dict(s_list):
