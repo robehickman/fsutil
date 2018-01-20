@@ -236,6 +236,18 @@ def apply_diffs(diffs, manifest):
     return manifest
 
 ############################################################################################
+def filter_helper(file_path, ignore_filters):
+    """ Returns True if file path matches any of the filters in 'ignores', ignores is a
+    list of unix wildcards, for example '/path/to/file' or '*.swp' """
+    return next((True for i in ignore_filters if fnmatch.fnmatch(file_path, i)), False)
+
+############################################################################################
+def filter_file_list(file_paths, ignore_filters):
+    """ Applies a list of unix wildcard filters to all of the files in file_paths,
+    returning those which do not match any of the filters. """
+    return [f for f in file_paths if not filter_helper(f['path'], ignore_filters)]
+
+############################################################################################
 def filter_f_list(f_list, unix_wildcard):
     """ Removes files from list by unix-type wild cards, used to implement ignored files. """
     f_list_filter = []

@@ -201,3 +201,16 @@ class TestCommon(TestCase):
                                   res_helper('moved', '/test2', '/a/test2', '12345'),
                                   res_helper('moved', '/test4', '/a/test4', 'b12345')])
 
+    def test_filter_helper(self):
+        self.assertFalse(filter_helper('/test/file', ['/test/file2']))
+        self.assertFalse(filter_helper('/test/file', ['/file1', '/test']))
+        self.assertTrue(filter_helper('/test/file', ['/file1', '/test/*']))
+        self.assertTrue(filter_helper('/test/file', ['*']))
+
+    def test_filter_file_list(self):
+        self.assertEqual(filter_file_list([{'path':'test'}], ['test']),
+                         [])
+
+        self.assertEqual(filter_file_list([{'path':'test'}], ['other']),
+                         [{'path':'test'}])
+
